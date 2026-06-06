@@ -52,7 +52,7 @@ export class Clan {
     );
 
     if (!result.includes("clanhalltop.gif")) {
-      throw new Error("Could not join clan");
+      throw new Error(`Could not join clan ID ${id}`);
     }
 
     return Clan.get();
@@ -123,7 +123,7 @@ export class Clan {
         );
 
         if (!clan) {
-          throw new Error("Player is not whitelisted to clan");
+          throw new Error(`Player is not whitelisted to clan '${clanIdOrName}'`);
         }
 
         clanIdCache[clanName] = clan.id;
